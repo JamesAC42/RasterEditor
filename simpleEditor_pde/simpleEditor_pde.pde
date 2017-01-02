@@ -51,7 +51,7 @@ void setup(){
   Position initdragb = new Position(145,375);
   bdrag = new DraggableRect(15,30, initdragb, color(0,0,255), 750);
   
-  imgPath = "surreal.jpg";
+  imgPath = "..\\surreal.jpg";
   myimg = loadImage(imgPath);
   
   image(myimg, 250,20);
