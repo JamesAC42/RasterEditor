@@ -96,65 +96,7 @@ public class fileOpenBtn{
     return (mouseX > this.position.getX() && mouseX < this.position.getX() + 10) && (mouseY > this.position.getY()-5 && mouseY < this.position.getY() + this.getHeight());
   }
 }
-/*
-public class BrightnessDrag extends DraggableRect {
-  private float brightness;
-  public BrightnessDrag(int height, int width, Position position, color fill, float screenHeight){
-    super(height, width, position, fill, screenHeight);
-    this.brightness = (super.screenOrigin / super.position.getY()) * 0.5;
-  }
-  public void changeBrightness(float brightness){
-    this.brightness = brightness;
-  }
-  public float getBrightness(){
-    try{
-      this.brightness = (super.screenOrigin / super.position.getY()) * 0.5;
-    }catch(ArithmeticException e){
-      this.brightness = (super.screenOrigin / 0.1) * 0.5;
-    }
-    return this.brightness;
-  }
-}
 
-public class ContrastDrag extends DraggableRect {
-  private float contrast;
-  public ContrastDrag(int height, int width, Position position, color fill, float screenHeight){
-    super(height, width, position, fill, screenHeight);
-    this.contrast = (super.screenOrigin / super.position.getY()) * 0.5;
-  }
-  public void changeContrast(float contrast){
-    this.contrast = contrast;
-  }
-  public float getContrast(){
-    this.contrast=  (super.screenOrigin / super.position.getY()) * 0.5;
-    return this.contrast;
-  }
-}
-
-public class TempDrag extends DraggableRect {
-  private Temperature temp;
-  public TempDrag(int height, int width, Position position, color fill, float screenHeight){
-    super(height, width, position, fill, screenHeight);
-    this.temp = new Temperature(1,1);
-  }
-  public void changeTemp(float hot, float cold){
-    this.temp.hot = hot;
-    this.temp.cold = cold;
-  }
-  public Temperature getTemp(){
-    return this.temp;
-  }
-}
-
-class Temperature{
-  public float hot;
-  public float cold;
-  public Temperature(float hot, float cold){
-    this.hot = hot;
-    this.cold = cold;
-  }
-}
-*/
 class Position{
   private float x;
   private float y;
