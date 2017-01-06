@@ -1,5 +1,4 @@
 DraggableRect brightnessdrag, contrastdrag, rdrag, bdrag, gdrag;
-//fileOpenBtn fileopen;
 DragBar brightnessbar, contrastbar, rbar, bbar, gbar;
 
 boolean dragbrightness, dragcontrast, dragr, dragb, dragg;
@@ -51,18 +50,11 @@ void setup(){
   Position initdragb = new Position(145,375);
   bdrag = new DraggableRect(15,30, initdragb, color(0,0,255), 750);
   
-  imgPath = "..\\surreal.jpg";
+  imgPath = "..\\clouds.jpg";
   myimg = loadImage(imgPath);
   
-  image(myimg, 250,20);
+  image(myimg, 250,20, width/2, height/2);
   loadPixels();
-
-  /*
-  initbrightnessbar.change(30,0);
-  initdragpos.change(30,0);
-  contrastbar = new DragBar(280, initbrightnessbar, color(230, 247, 255));
-  contrastdrag = new ContrastDrag(15, 30, initdragpos, color(0, 153, 153), 0);
-  */
   
 }
 void draw(){
@@ -71,7 +63,6 @@ void draw(){
   
   image(myimg,200,20);
   
-  //fileopen.render();
   loadPixels();
   int i = 0;
   float bright = brightnessdrag.getScale();
@@ -84,6 +75,7 @@ void draw(){
     rgbvals[0] = (red(pixels[i])) * rmod;
     rgbvals[1] = (green(pixels[i])) * gmod;
     rgbvals[2] = (blue (pixels[i])) * bmod;
+    
     for(int cval = 0; cval < rgbvals.length; cval++){
       if(rgbvals[cval] > 125){
         rgbvals[cval] *= contrast;
@@ -93,7 +85,8 @@ void draw(){
     }
     color newColor = color(rgbvals[0] * bright, rgbvals[1] * bright, rgbvals[2] * bright); 
     pixels[i] = newColor;   
-    i += 1;        
+    i += 1; 
+    i++;
   }
   
   updatePixels();
